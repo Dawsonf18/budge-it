@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Income, User } = require("../../models");
+const withAuth = require('../../utils/auth')
 
 // Get income entries
 router.get("/", (req, res) => {
@@ -45,7 +46,7 @@ router.get("/:id", (req, res) => {
 });
 
 // Creates a income entry
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Income.create({
     income_type: req.body.income_type,
     income_amount: req.body.income_amount,
@@ -60,7 +61,7 @@ router.post("/", (req, res) => {
 });
 
 // Edit income info
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
     Income.update(
       {
         income_type: req.body.income_type,
@@ -87,7 +88,7 @@ router.put("/:id", (req, res) => {
   })
 
 // Delete a income entry
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
     Income.destroy({
       where: {
         id: req.params.id,

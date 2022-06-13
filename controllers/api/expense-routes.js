@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Expense, User } = require("../../models");
+const withAuth = require('../../utils/auth')
 
 router.get("/", (req, res) => {
     Expense.findAll({
@@ -37,7 +38,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
     Expense.create({
       expense_name: req.body.expense_name,
       expense_type: req.body.expense_type,
@@ -52,7 +53,7 @@ router.post("/", (req, res) => {
       });
   });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Expense.update(
         {
             expense_name: req.body.expense_name,
@@ -77,7 +78,7 @@ router.put('/:id', (req, res) => {
     });
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Expense.destroy(
         {
             where: {
