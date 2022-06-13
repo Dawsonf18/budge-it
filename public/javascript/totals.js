@@ -56,8 +56,8 @@ const expenseTotalDisplay = document.getElementById("expenseTotal")
 const budgetStatusDisplay = document.getElementById("budgetStatus")
 
 // Total Display Text
-incomeTotalDisplay.innerHTML = "Total Income = $" + incomeTotalVal;
-expenseTotalDisplay.innerHTML = "Total Expenses = $" + expenseTotalVal;
+incomeTotalDisplay.innerHTML = "Total Income = $" + incomeTotalVal.toFixed(2);
+expenseTotalDisplay.innerHTML = "Total Expenses = $" + expenseTotalVal.toFixed(2);
 
 // Color Code Budget
 if (incomeTotalVal < expenseTotalVal) {
