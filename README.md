@@ -46,4 +46,4 @@ node server
 - [GerardMennella21](https://github.com/GerardMennella21)
 - [Dawsonf18](https://github.com/Dawsonf18)
 - [Devnah4](https://github.com/Devnah4)
-- [Kyan22](https://github.com/Kyan22)
+- [Khyan22](https://github.com/khyan22)
