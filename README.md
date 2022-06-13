@@ -17,7 +17,7 @@
 
 ## Preview
 
-- [View a Live Demo!](budge--it.herokuapp.com)
+- [View a Live Demo!](https://budge--it.herokuapp.com/)
 ***
 - [View some Images!](https://imgur.com/a/F8oXvm4)
 
